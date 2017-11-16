@@ -1,4 +1,4 @@
-package edu.kytsmen.java.encryption.euclidean_extended.utils;
+package edu.kytsmen.java.encryption.euclidean.dto;
 
 public class IntWrapper {
     private int value;
