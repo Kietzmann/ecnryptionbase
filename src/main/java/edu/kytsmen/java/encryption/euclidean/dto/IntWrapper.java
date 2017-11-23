@@ -11,7 +11,7 @@ public class IntWrapper {
         this.value = value;
     }
 
-    public static IntWrapper set(int value) {
+    public static IntWrapper build(int value) {
         IntWrapper intWrapper = new IntWrapper();
         intWrapper.setValue(value);
         return intWrapper;

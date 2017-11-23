@@ -26,7 +26,7 @@ public class InteractionUtils {
                         input = getInputDataFromFile(filePath);
                         break;
                     default:
-                        System.out.println("You have choosen invalid number. The program will shutdown.");
+                        System.out.println("You have chosen invalid number. The program will shutdown.");
                         break;
                 }
                 if (input != null) {

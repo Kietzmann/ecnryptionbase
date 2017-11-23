@@ -12,8 +12,8 @@ public class GCDExtended {
             return b;
         }
 
-        IntWrapper x1 = IntWrapper.set(1);
-        IntWrapper y1 = IntWrapper.set(1);
+        IntWrapper x1 = IntWrapper.build(1);
+        IntWrapper y1 = IntWrapper.build(1);
         int gcd = calculate(b % a, a, x1, y1);
         x.setValue(y1.getValue() - (b / a) * x1.getValue());
         y.setValue(x1.getValue());
@@ -22,8 +22,8 @@ public class GCDExtended {
     }
 
     public static ExtendedResult calculate(NumberInput input) {
-        IntWrapper x = IntWrapper.set(1);
-        IntWrapper y = IntWrapper.set(1);
+        IntWrapper x = IntWrapper.build(1);
+        IntWrapper y = IntWrapper.build(1);
         int gcd = calculate(input.getA(), input.getB(), x, y);
         return new ExtendedResult(gcd, x.getValue(), y.getValue());
     }

@@ -1,33 +1,35 @@
-package edu.kytsmen.java.encryption.eratosthenes.utils;
+package edu.kytsmen.java.encryption.LCE.utils;
 
-import edu.kytsmen.java.encryption.eratosthenes.dto.Result;
+
+import edu.kytsmen.java.encryption.LCE.dto.NumberInput;
+import edu.kytsmen.java.encryption.LCE.dto.Result;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.function.Function;
 
+import static edu.kytsmen.java.encryption.euclidean.utils.InputUtils.*;
 
 public class InteractionUtils {
-
-    public static void provideUserInterface(Function<Integer, Result> function) {
+    public static void provideUserInterface(Function<NumberInput, Result> function) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            int choose = edu.kytsmen.java.encryption.euclidean.utils.InputUtils.getIntegerInput("Press '1' to enter value manually\nPress '2' to enter value from file", br);
-            Integer n = null;
+            int choose = getIntegerInput("Press '1' to enter values manually\nPress '2' to enter values from file", br);
+            NumberInput input = null;
             switch (choose) {
                 case 1:
-                    n = InputUtils.proceedFromConsole(br);
+                    input = InputUtils.proceedFromConsole(br);
                     break;
                 case 2:
-                    String filePath = edu.kytsmen.java.encryption.euclidean.utils.InputUtils.getStringInput("Please provide absolute path to file with input data", br);
-                    n = InputUtils.getInputDataFromFile(filePath);
+                    String filePath = getStringInput("Please provide absolute path to file with input data", br);
+                    input = InputUtils.getInputDataFromFile(filePath);
                     break;
                 default:
                     System.out.println("You have chosen invalid number. The program will shutdown.");
                     break;
             }
-            if (n != null) {
-                System.out.println(function.apply(n));
+            if (input != null) {
+                System.out.println(function.apply(input));
             } else {
                 System.out.println("Provided input cannot be parsed");
             }
@@ -38,4 +40,3 @@ public class InteractionUtils {
         }
     }
 }
-
