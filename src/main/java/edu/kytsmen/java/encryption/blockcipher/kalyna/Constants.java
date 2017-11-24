@@ -1,4 +1,4 @@
-package edu.kytsmen.java.encryption.core.kalyna;
+package edu.kytsmen.java.encryption.blockcipher.kalyna;
 
 public class Constants {
     final static int mds_matrix[][] = /*new int[8][8]*/{
