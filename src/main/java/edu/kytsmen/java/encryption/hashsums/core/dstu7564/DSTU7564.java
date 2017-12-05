@@ -266,32 +266,6 @@ public class DSTU7564 {
 
     private static long mixColumn(long c)
     {
-//        // Calculate column multiplied by powers of 'x'
-//        long x0 = c;
-//        long x1 = ((x0 & 0x7F7F7F7F7F7F7F7FL) << 1) ^ (((x0 & 0x8080808080808080L) >>> 7) * 0x1DL);
-//        long x2 = ((x1 & 0x7F7F7F7F7F7F7F7FL) << 1) ^ (((x1 & 0x8080808080808080L) >>> 7) * 0x1DL);
-//        long x3 = ((x2 & 0x7F7F7F7F7F7F7F7FL) << 1) ^ (((x2 & 0x8080808080808080L) >>> 7) * 0x1DL);
-//
-//        // Calculate products with circulant matrix from (0x01, 0x01, 0x05, 0x01, 0x08, 0x06, 0x07, 0x04)
-//        long m0 = x0;
-//        long m1 = x0;
-//        long m2 = x0 ^ x2;
-//        long m3 = x0;
-//        long m4 = x3;
-//        long m5 = x1 ^ x2;
-//        long m6 = x0 ^ x1 ^ x2;
-//        long m7 = x2;
-//
-//        // Assemble the rotated products
-//        return m0
-//            ^ rotate(8, m1)
-//            ^ rotate(16, m2)
-//            ^ rotate(24, m3)
-//            ^ rotate(32, m4)
-//            ^ rotate(40, m5)
-//            ^ rotate(48, m6)
-//            ^ rotate(56, m7);
-
         // Multiply elements by 'x'
         long x1 = ((c & 0x7F7F7F7F7F7F7F7FL) << 1) ^ (((c & 0x8080808080808080L) >>> 7) * 0x1DL);
         long u, v;
