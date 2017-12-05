@@ -1,7 +1,4 @@
-package edu.kytsmen.java.encryption;
-
-import edu.kytsmen.java.encryption.schnorr.SchnorrSign;
-import edu.kytsmen.java.encryption.schnorr.SchnorrSignature;
+package edu.kytsmen.java.encryption.schnorr;
 
 import java.math.BigInteger;
 import java.util.Objects;
